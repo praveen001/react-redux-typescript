@@ -1,9 +1,11 @@
+import { Action } from "redux";
+
 export enum AppActionTypes {
   INCREMENT = 'app/INCREMENT',
   DECREMENT = 'app/DECREMENT'
 };
 
-export interface IIncrementAction {
+export interface IIncrementAction extends Action {
   type: AppActionTypes.INCREMENT,
   payload: {
     number: number,
@@ -11,7 +13,7 @@ export interface IIncrementAction {
   }
 };
 
-export interface IDecrementAction {
+export interface IDecrementAction extends Action {
   type: AppActionTypes.DECREMENT,
   payload: {
     number: number
@@ -20,12 +22,7 @@ export interface IDecrementAction {
 
 export type AppAction = IIncrementAction | IDecrementAction;
 
-export const types = {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT'
-};
-
-export function increment(number: number): IIncrementAction {
+export function increment(number: number, extra: number): IIncrementAction {
   return {
     type: AppActionTypes.INCREMENT,
     payload: {

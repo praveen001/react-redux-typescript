@@ -1,19 +1,23 @@
 import React from 'react';
 
-export interface PropsFromState {
+export interface IOwnProps {
+
+};
+
+export interface IStateProps {
   counter: number,
 };
 
-export interface PropsFromDispatch {
-  increment: (number) => void,
-  decrement: (number) => void,
+export interface IDispatchProps {
+  increment: (number: number, extra: number) => void,
+  decrement: (number: number) => void,
 };
 
-interface AppProps extends PropsFromDispatch, PropsFromState {};
+type AppProps = IOwnProps & IStateProps & IDispatchProps;
 
 class App extends React.Component<AppProps, {}> {
   increment = (): void => {
-    this.props.increment(5);
+    this.props.increment(5, 1);
   }
 
   decrement = (): void => {
