@@ -11,7 +11,7 @@ const store = createStore<IState, Action, {}, {}>(rootReducer, initialState);
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppContainer />
+    <AppContainer title="Increment/Decrement" />
   </Provider>,
   document.getElementById('app')
 );

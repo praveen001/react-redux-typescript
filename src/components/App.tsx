@@ -1,35 +1,33 @@
 import React from 'react';
 
 export interface IOwnProps {
-
-};
+  title: string;
+}
 
 export interface IStateProps {
-  counter: number,
-};
+  counter: number;
+}
 
 export interface IDispatchProps {
-  increment: (number: number, extra: number) => void,
-  decrement: (number: number) => void,
-};
+  increment: (x: number, extra: number) => void;
+  decrement: (x: number) => void;
+}
 
 type AppProps = IOwnProps & IStateProps & IDispatchProps;
 
 class App extends React.Component<AppProps, {}> {
-  increment = (): void => {
+  public increment = (): void => {
     this.props.increment(5, 1);
-  }
+  };
 
-  decrement = (): void => {
+  public decrement = (): void => {
     this.props.decrement(5);
-  }
+  };
 
-  render() {
+  public render() {
     return (
       <div>
-        <div>
-          {this.props.counter}
-        </div>
+        <div>{this.props.counter}</div>
         <button onClick={this.increment}>Increment</button>
         <button onClick={this.decrement}>Decrement</button>
       </div>

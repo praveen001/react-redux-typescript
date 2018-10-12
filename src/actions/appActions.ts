@@ -8,7 +8,7 @@ export enum AppActionTypes {
 export interface IIncrementAction extends Action {
   type: AppActionTypes.INCREMENT;
   payload: {
-    number: number;
+    x: number;
     extra: number;
   };
 }
@@ -16,27 +16,27 @@ export interface IIncrementAction extends Action {
 export interface IDecrementAction extends Action {
   type: AppActionTypes.DECREMENT;
   payload: {
-    number: number;
+    x: number;
   };
 }
 
 export type AppAction = IIncrementAction | IDecrementAction;
 
-export function increment(number: number, extra: number): IIncrementAction {
+export function increment(x: number, extra: number): IIncrementAction {
   return {
     type: AppActionTypes.INCREMENT,
     payload: {
-      number,
+      x,
       extra: 10
     }
   };
 }
 
-export function decrement(number: number): IDecrementAction {
+export function decrement(x: number): IDecrementAction {
   return {
     type: AppActionTypes.DECREMENT,
     payload: {
-      number
+      x
     }
   };
 }

@@ -7,12 +7,17 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "tsc",
+    "format": "prettier --write src/**/*.{ts,tsx,js,jsx,json}",
     "lint": "tslint 'src/**/*.{ts,tsx}'",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{ts,jsx,js,jsx,json}": [
+    "*.{ts,tsx,js,jsx,json}": [
       "prettier --write",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "tslint --fix",
       "git add"
     ]
   },
