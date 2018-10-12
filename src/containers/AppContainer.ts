@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
+import { decrement, increment } from '../actions/appActions';
+import App, { IDispatchProps, IOwnProps, IStateProps } from '../components/App';
 import { IState } from '../reducers';
-import { increment, decrement } from '../actions/appActions';
-import App, { IOwnProps, IStateProps, IDispatchProps } from '../components/App';
 
 function mapStateToProps(state: IState, props: IOwnProps): IStateProps {
   return {

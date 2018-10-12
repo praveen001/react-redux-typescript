@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, Action } from 'redux';
+import { Action, createStore } from 'redux';
 
-import rootReducer, { IState, initialState } from './reducers';
+import rootReducer, { initialState, IState } from './reducers';
 
 import AppContainer from './containers/AppContainer';
 
