@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "tslint 'src/**/*.{ts,tsx}'"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
