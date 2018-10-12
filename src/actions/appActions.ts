@@ -1,24 +1,24 @@
-import { Action } from "redux";
+import { Action } from 'redux';
 
 export enum AppActionTypes {
   INCREMENT = 'app/INCREMENT',
   DECREMENT = 'app/DECREMENT'
-};
+}
 
 export interface IIncrementAction extends Action {
-  type: AppActionTypes.INCREMENT,
+  type: AppActionTypes.INCREMENT;
   payload: {
-    number: number,
-    extra: number
-  }
-};
+    number: number;
+    extra: number;
+  };
+}
 
 export interface IDecrementAction extends Action {
-  type: AppActionTypes.DECREMENT,
+  type: AppActionTypes.DECREMENT;
   payload: {
-    number: number
-  }
-};
+    number: number;
+  };
+}
 
 export type AppAction = IIncrementAction | IDecrementAction;
 
@@ -30,7 +30,7 @@ export function increment(number: number, extra: number): IIncrementAction {
       extra: 10
     }
   };
-};
+}
 
 export function decrement(number: number): IDecrementAction {
   return {
@@ -39,4 +39,4 @@ export function decrement(number: number): IDecrementAction {
       number
     }
   };
-};
+}
