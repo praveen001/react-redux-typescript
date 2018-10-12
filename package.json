@@ -8,8 +8,12 @@
     "start": "webpack-dev-server",
     "build": "tsc",
     "format": "prettier --write src/**/*.{ts,tsx,js,jsx,json}",
-    "lint": "tslint 'src/**/*.{ts,tsx}'",
-    "precommit": "lint-staged"
+    "lint": "tslint 'src/**/*.{ts,tsx}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json}": [
