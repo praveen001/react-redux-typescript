@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "tsc",
+    "build": "webpack",
     "format": "prettier --write src/**/*.{ts,tsx,js,jsx,json}",
     "lint": "tslint 'src/**/*.{ts,tsx}'",
     "lint-fix": "tslint 'src/**/*.{ts,tsx}'"
